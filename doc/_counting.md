@@ -72,7 +72,7 @@ We have now stored our data in an object of the class *GappedAlignmentPairs*, wh
 *Hint:* look for the *GappedAlignmentPairs* class
 
 Since we have loaded only the reads that map to chromosome 4, we can proceed to modify the `aln_chr4` object accordingly:
-```R
+```rconsole
 seqlevels(aln_chr4)="chr4"
 aln_chr4
 ```
@@ -80,7 +80,7 @@ aln_chr4
 #### Importing the annotation
 To link the alignments to their respective features, we need access to the genome annotation for the studied organism, in our case *Drosophila melanogaster*, which contains information on the coordinates of known exons, genes and transcripts. Similarly to what we encountered when loading BAM files, there is more than one way to load the annotation in R (see XX for further details). It is extremely important to pay attention to overlapping features (e.g. exons shared by multiple transcripts within the same gene), since they might end up complicating the downstream analysis (e.g. we need to make sure not to count the same read multiple times). In order to circumvent this limitation, in this practical we will use the *biomaRt* package to query Ensembl directly from R and retrieve only the necessary information:
 
-```R
+```rconsole
 library(biomaRt)
 
 ensembl62=useMart(host="apr2011.archive.ensembl.org", 
@@ -105,7 +105,7 @@ annot=getBM( fields, mart=ensembl62)
 *Hint:* type `?summarizeOverlaps`
 
 Before we proceed to calculate the counts, we need to store the annotation information in an object of the proper class:
-```R
+```rconsole
 annot=GRanges(
     seqnames = Rle(paste("chr", annot$chromosome_name, sep="")),
     ranges = IRanges(start=annot$exon_chrom_start, 
@@ -121,7 +121,7 @@ class(annot)
 #### Counting reads over known genes in R
 Now that we have the alignment locations (`aln_unique` object) and the genome annotation (`annot` object), we can quantify gene expression by counting reads over all exons of a gene and summing them together. Similarly to what we encountered with htseq-count, we need to pay attention to those reads that overlap with several features.
 
-```R
+```rconsole
 counts_chr4=summarizeOverlaps(
     annot_chr4, aln_chr4, ignore.strand=T, mode="IntersectionNotEmpty")
 exon_counts_chr4=assays(counts_chr4)$counts[,1]
