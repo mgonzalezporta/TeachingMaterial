@@ -20,16 +20,16 @@ Along this tutorial, we will be working with a subset of a publicly available RN
     3. [Aligning reads to the genome](doc/_aligning.md)
 2. **Dealing with aligned data**
     1. [The SAM/BAM format](doc/_bam.md)
-    1. [Visualising aligned reads](doc/_bam.md)
-    1. [Filtering BAM files using samtools](doc/_bam.md)
-    1. [Counting reads overlapping annotated genes](doc/_bam.md)
-        1. [With htseq-count](doc/_bam.md)
-        1. [With R](doc/_bam.md)
-        1. [Alternative approaches](doc/_bam.md)
-    1. [Normalising counts](doc/_bam.md)
-        1. [With RPKMs](doc/_bam.md)
-        1. [With DESeq](doc/_bam.md)
-    1. [Differential gene expression](doc/_bam.md)
+    1. [Visualising aligned reads](doc/_visualising.md)
+    1. [Filtering BAM files using samtools](doc/_filtering_bam.md)
+    1. [Counting reads overlapping annotated genes](doc/_counting.md)
+        1. With htseq-count
+        1. With R
+        1. Alternative approaches
+    1. [Normalising counts](doc/_normalising.md)
+        1. With RPKMs
+        1. With DESeq
+    1. [Differential gene expression](doc/_de.md)
 
 ## Software requirements
 Be aware...
