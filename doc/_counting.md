@@ -43,7 +43,7 @@ There are three main functions to load BAM files into R:
 
 In this section we will import the data using the *readGappedAlignmentPairs}* function, intended for paired-end data. This will create a *GappedAlignmentPairs* object that contains only the aligned reads. In order to spead up the process of importing the data, we will use the function *ScanBamParam* to load only the reads that map to chromosome 4: 
 
-```R
+```
 library(GenomicRanges)
 library(Rsamtools) 
 
