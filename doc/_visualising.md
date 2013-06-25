@@ -4,15 +4,18 @@ Several genome browsers exist to visualise the files generated during the analys
 Once the interface is loaded, we can proceed to load the necessary files. In our case, we will load the following information:
 
 * the reference genome:
+
     ```
     Genomes > Load genome from file >
     reference/Drosophila_melanogaster.BDGP5.25.62.dna_rm.toplevel.fa
     ```
 * the BAM file:
+
     ```
     File > Load from file > data/mapped/untreated3.bam
     ```  
 * the annotation:
+
     ```
     File > Load from file > reference/Drosophila_melanogaster.BDGP5.25.62.gtf
     ```
