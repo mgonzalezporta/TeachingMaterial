@@ -12,13 +12,13 @@ Along this tutorial, we will be working with a subset of a publicly available RN
 
 ## Table of contents
 
-1. Dealing with raw data
+**1. Dealing with raw data**
     1. [The FASTQ format](doc/_fastq.md)
     2. [Quality assessment (QA)](doc/_qa.md)
     3. [Filtering the FASTQ files](doc/_filtering_fastq.md)
     4. [De-multiplexing samples](doc/_demultiplexing.md)
     3. [Aligning reads to the genome](doc/_aligning.md)
-2. Dealing with aligned data
+**2. Dealing with aligned data**
     1. [The SAM/BAM format](doc/_bam.md)
     1. [Visualising aligned reads](doc/_bam.md)
     1. [Filtering BAM files using samtools](doc/_bam.md)
