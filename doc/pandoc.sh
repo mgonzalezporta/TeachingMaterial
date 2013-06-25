@@ -1,0 +1,1 @@
+pandoc intro.md -o readme-pandoc.pdf --toc --variable title:"title subtitle" --variable date:"2013--6-25" --variable author:"Mar Gonzàlez-Porta" --variable links-as-notes --variable linkcolor:black --variable urlcolor:black --variable geometry:margin=3cm

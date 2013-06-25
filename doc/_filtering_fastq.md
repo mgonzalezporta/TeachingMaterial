@@ -1,0 +1,77 @@
+## Filtering the FASTQ files
+After analysing the QA report, one might want to discard some of the reads based on several criteria, such as quality and nucleotide composition. We will use two different tools to perform these filtering steps: [PRINSEQ](http://prinseq.sourceforge.net/) and [fastqc-mcf](https://code.google.com/p/ea-utils/).
+
+PRINSEQ offers a wide range of options for filtering and we can learn about them in the manual:
+```bash
+prinseq-lite -h
+```
+
+Based on what we have learned from the QA report, we could decide to apply the following filters:
+```bash
+zcat SRR031714_1.fastq.gz | prinseq-lite \
+    -fastq stdin \
+    -out_good SRR031714_1_filt1 \
+    -out_bad null \
+    -trim_qual_right 30 -min_len 32 \
+    -ns_max_p 5 \
+    -lc_method dust -lc_threshold 10
+    
+zcat SRR031714_2.fastq.gz | prinseq-lite \
+    -fastq stdin \
+    -out_good SRR031714_2_filt1 \
+    -out_bad null \
+    -trim_qual_right 30 -min_len 32 \
+    -ns_max_p 5 \
+    -lc_method dust -lc_threshold 10
+```
+
+**Exercise:** Which are the criteria that we are using to discard reads? 
+[Solution](../solutions/xx.md)
+
+**Exercise:** Which extra option should we have had to use if our files had been in phred 64 format?
+
+**Exercise:** After filtering the fastq file it is not a bad idea to obtain a QA report again to decide whether we are happy with the results. Do you think we got rid of the main issues spotted initially?
+
+**Exercise:** Usually it is also useful to keep track of the number of reads available in the fastq file both before and after the filtering step. Can you gather this information from the FastQC reports? Given that we are working with paired-end data, do you see any limitation?
+Now imagine we were working with a bigger number of files; can you come up with a more automated way to check that?
+
+The filtering step might become complicated if you are working with paired-end data, since you have to be sure that both fastq files (one for each read pair) contain the same number of reads in the same order. There are some tools available that simplify this task, for example, fastqc-mcf. We can print a list of the avaiable options just by typing in the name of the tool:
+```bash
+fastqc-mcf
+```
+
+We observe that a main functionality of fastqc-mcf is to remove adapters from the fastq file. For this reason we need to provide a fasta file with the adapter sequences. In our case, we have decided to check only for the standard Illumina paired-end adapter:
+```bash
+cat adapters.fa
+```
+
+Now that we have a good understanding of the required input we can proceed to execute the tool, trying to match the options that we used previously with PRINSEQ:
+```bash
+fastq-mcf adapters.fa SRR031714_1.fastq.gz SRR031714_2.fastq.gz \
+    -o SRR031714_1_filt2.fastq -o SRR031714_2_filt2.fastq \
+    -q 30 -P 33 -l 32 --max-ns 1
+```
+
+**Exercise:** How does the QA report look like this time? Do we have the same number of reads in each file?
+
+**Exercise:** Something else that one might want to check is the read length distribution. How long where our reads before we started with the filtering step? How long are they now?
+
+Depending on the filtering options used, we might end up with a set of reads with different lengths. *A priori*, this should not be a limitation, but we might encounter some difficulties in the downstream analyses, depending on the tools we want to use. For this reason, if we have a clear idea of what we want to do with the data, it is always a good practice to check the requirements for the tools that we are planning to use before taking any steps. If that is not the case, in order to be on the safe side, we can use filtering options that affect all reads equally, eg:
+
+```bash
+zcat SRR031714_1.fastq.gz | prinseq-lite \
+    -fastq stdin \
+    -out_good SRR031714_1_filt3 \
+    -out_bad null \
+    -trim_right 5
+    
+zcat SRR031714_1.fastq.gz | prinseq-lite \
+    -fastq stdin \
+    -out_good SRR031714_1_filt3 \
+    -out_bad null \
+    -trim_right 5
+```
+
+**Exercise:** Let us generate the QA reports one last time. How do they compare to the previous ones?
+
+**Conclusion:** There are many filtering combinations that you can apply, and the specific options will largely depend on the type of data and the posterior analyses. We recommend to check the [PRINSEQ manual](http://prinseq.sourceforge.net/manual.html) for a nice overview on the topic.

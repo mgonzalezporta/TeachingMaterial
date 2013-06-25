@@ -1,0 +1,26 @@
+## De-multiplexing samples
+Nowadays, NGS machines produce so many reads that the coverage obtained per lane for the transcriptome of organisms with small genomes is very high. Sometimes it is more valuable to sequence more samples with lower coverage than sequencing only one with very high coverage. With this end, multiplexing techniques have been optimised to sequence several samples in a single lane using 4-6 bp barcodes to uniquely identify the sample within the library [Lefrancois:2009p7029]. Using this method it is possible to sequence, on average, 12 yeast samples at 30X coverage in a single lane of an Illumina GAIIx (100bp read, single end). This approach is very advantageous for researchers, especially in terms of cost, but it adds an additional layer of pre-processing that is not as trivial as one would think, given the average 0.1-1% sequencing error rate that introduces a lot of multiplicity in the actual barcodes. Most commonly the data is de-multiplexed immediately after sequencing, and only FASTQ files that are ready for analyses are distributed. However, you might encounter the necessity to perform the de-multiplexing step yourself, or, given de-multiplexed FASTQ files, to remove the adaptors manually. Thus, it is important to learn how to deal with such data.
+
+The data which we were working on in the previous section was not mutiplexed, so we will now work with a different fastq file that can be found under the `data/demultiplexing` directory. In this directory you will also find information on the barcodes used:
+
+```bash
+cat barcodes.txt
+```
+
+**Exercise:** Imagine we do not know whether the barcode was introduced in the 5' or the 3' end of the reads. How can we figure that out?
+
+In order to separate the reads in 4 different fastq files (one for each barcode/sample) we will use [fastq-multx](https://code.google.com/p/ea-utils/). We can learn more about this tool by typing its name in the terminal:
+
+```bash
+fastq-multx
+```
+
+Although we already kow wehere our barcodes are located within the read, from the documentation we observe that fastq-multx will attempt to guess the position for us. Let us try the automatic guessing with the following command:
+
+```bash
+fastq-multx barcodes.txt barcoded.fastq -o %.barcoded.fastq
+```
+
+After executing the command above you should have five new fastq files: one corresponding to each sample and one for the reads that did not match any of the barcodes.
+
+**Exercise:** Try generating a QA report for one of the samples. How does it compare to the report for the initial multiplexed fastq file? What happened to the read length?

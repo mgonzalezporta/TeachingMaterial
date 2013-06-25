@@ -1,0 +1,32 @@
+## The SAM/BAM format
+The SAM/BAM format is the standard way of representing the results from the alignment step. It contains the same information as in the fastq file, plus some extra fields providing mapping information, for example, the coordinates where each of the reads was aligned. A SAM file is a plain text file with the information spread across different columns, and a BAM file is just its compressed version in binary format. In order to save disk space, we will typically work with BAM files; however, we can easily transform a BAM file into SAM format using [samtools](http://samtools.sourceforge.net/samtools.shtml):
+
+```bash
+# do not run
+samtools view -h -o untreated3.sam untreated3.bam
+```
+
+We can now inspect the first lines of the file with standard Unix commands:
+```bash
+head -n20 untreated3.sam
+```
+
+Alternatively, we can directly inspect the contents of a BAM file with the following samtools command:
+```bash
+samtools view untreated3.bam | head
+```
+
+**Exercise:** Why do we get a different output from the two previous commands? How can we obtain information about the header from the BAM file? Hint: try typing `samtools view` into the terminal.
+
+**Exercise:** The first column in the BAM file contains the read name. Take a closer look at the first alignments: why do you think some of the names appear twice, while others seem to be present only once?
+
+**Exercise:** A description of the SAM format can be found in the [samtools website](http://samtools.sourceforge.net/samtools.shtml), under the section *SAM format*. With the combination of samtools and Unix commands, try to answer the following questions:
+
+* How many reads are mapped in total?
+* How many reads map to each chromosome?
+* How many different mapping qualities are represented in the BAM file, and how many reads have each of them assigned?
+* How many different alignment flags can you find in the BAM file? What do they represent?
+  *Hint:* http://picard.sourceforge.net/explain-flags.html
+* Try to print the unique CIGAR strings for the first 300 reads. What is their meaning?
+  *Hint:* http://genome.sph.umich.edu/wiki/SAM
+

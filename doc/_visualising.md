@@ -1,0 +1,23 @@
+## Visualising aligned reads
+Several genome browsers exist to visualise the files generated during the analysis of high-troughput sequencing data, including BAM files. Two of the most popular tools are [IGV](http://www.broadinstitute.org/igv/) and [Tablet](http://bioinf.scri.ac.uk/tablet/). In this practical we will be using IGV to visualise our BAM file. We can launch this tool from the *Download* section in the [project website](http://www.broadinstitute.org/igv/download).
+
+Once the interface is loaded, we can proceed to load the necessary files. In our case, we will load the following information:
+
+* the reference genome:
+    ```no-highlight
+    Genomes > Load genome from file >
+    reference/Drosophila_melanogaster.BDGP5.25.62.dna_rm.toplevel.fa
+    ```
+* the BAM file:
+    ```no-highlight
+    File > Load from file > data/mapped/untreated3.bam
+    ```  
+* the annotation:
+    ```no-highlight
+    File > Load from file > reference/Drosophila_melanogaster.BDGP5.25.62.gtf
+    ```
+
+*Note: IGV requires the BAM file to be indexed, which can be achieved with samtools (i.e. `samtools index bam_file`). For this practical the index is already provided, so there is no need to run this command.*
+
+**Exercise:** Spend some time exploring the loaded BAM file and how the reads overlap with the known annotation. Can you find examples of split and spliced reads? For a subset of the reads, some nucleotides are highlighted in a different color. What do you think the explanation for this is?
+*Hint:* http://www.broadinstitute.org/igv/AlignmentData
