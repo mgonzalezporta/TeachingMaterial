@@ -23,12 +23,12 @@ Along this tutorial, we will be working with a subset of a publicly available RN
     1. [Visualising aligned reads](doc/_visualising.md)
     1. [Filtering BAM files using samtools](doc/_filtering_bam.md)
     1. [Counting reads overlapping annotated genes](doc/_counting.md)
-        1. With htseq-count
-        1. With R
-        1. Alternative approaches
+        * With htseq-count
+        * With R
+        * Alternative approaches
     1. [Normalising counts](doc/_normalising.md)
-        1. With RPKMs
-        1. With DESeq
+        * With RPKMs
+        * With DESeq
     1. [Differential gene expression](doc/_de.md)
 
 ## Software requirements
