@@ -10,7 +10,7 @@ Under the several subdirectories of `2013_RNAseq_course` there is a copy of this
 
 Along this tutorial, we will be working with a subset of a publicly available RNA-seq experiment from *Drosophila melanogaster*. This dataset is provided as a Bioconductor package ([pasilla](http://www.bioconductor.org/packages/release/data/experiment/html/pasilla.html)) and the raw sequence data can be found in the Short Read Archive ([SRP001537](http://www.ebi.ac.uk/ena/data/view/SRP001537)). More information on the experiment can be found in the original publication ([Brooks et al. 2010](http://genome.cshlp.org/content/early/2010/10/04/gr.108662.110)).
 
-## Table of contents:
+## Table of contents
 
 1. Dealing with raw data
     1. [The FASTQ format](doc/_fastq.md)
