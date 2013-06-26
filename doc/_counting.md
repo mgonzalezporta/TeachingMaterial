@@ -72,6 +72,7 @@ We have now stored our data in an object of the class *GappedAlignmentPairs*, wh
 * How many reads are properly paired?
 * What is the percentage of reads that map to multiple locations?
 * What information does the following command provide?
+
   ```rconsole
     seqlevels(aln_chr4)
   ```
