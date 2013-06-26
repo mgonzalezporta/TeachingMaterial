@@ -1,14 +1,21 @@
 # RNA-seq data analysis practical
-This tutorial will illustrate how to use standalone tools, together with R and Bioconductor for the analysis of expression data obtained from high-throughput sequencing (HTS) assays. Starting from raw files as they come from a sequencing machine, we will make diagnostic plots to assess the quality of the run and filter out bad quality reads. We will then assume that these raw data have been mapped to a reference genome and we will use the aligned reads to obtain a matrix of normalised expression estimates per gene and to define novel expressed regions.
 
 
-Throughout this document you will find commands that you should type or copy paste into the UNIX terminal or the R command line. There are also exercises (some of them might be challenging) that you should try to solve (the solutions are provided at the end). Whenever there is an output to your command please take some time to understand what it means.
+
+This tutorial will illustrate how to use standalone tools, together with R and Bioconductor for the analysis of RNA-seq data. We will be working with a subset of a publicly available dataset from *Drosophila melanogaster*, which is available both in the Short Read archive ([SRP001537](http://www.ebi.ac.uk/ena/data/view/SRP001537); raw data) and in Bioconductor ([pasilla package](http://www.bioconductor.org/packages/release/data/experiment/html/pasilla.html); processed data). For more information about this dataset please refer to the original publication ([Brooks et al. 2010](http://genome.cshlp.org/content/early/2010/10/04/gr.108662.110)).
 
 
-Under the several subdirectories of `2013_RNAseq_course` there is a copy of this document, the data and the annotation files we will be using in this tutorial. We recommend that you copy all the files into your Desktop.
+The tools and R packages that we will be using during the practical are listed below (see [Software requirements](https://github.com/mgonzalezporta/TeachingMaterial#software-requirements)) and the necessary data files can be found [here](http://www.ebi.ac.uk/~mar/courses/RNAseq.tar.gz). After dowloading and uncompressing the file, you should have the following directory structure:
 
+```
+RNAseq
+|-- reference               # reference info (e.g genome sequence and annotation)
+`-- data
+    |-- raw                 # raw data: fastq files
+    |-- mapped              # mapped data: BAM files
+    `-- demultiplexing      # extra fastq files for the demultiplexing section
 
-Along this tutorial, we will be working with a subset of a publicly available RNA-seq experiment from *Drosophila melanogaster*. This dataset is provided as a Bioconductor package ([pasilla](http://www.bioconductor.org/packages/release/data/experiment/html/pasilla.html)) and the raw sequence data can be found in the Short Read Archive ([SRP001537](http://www.ebi.ac.uk/ena/data/view/SRP001537)). More information on the experiment can be found in the original publication ([Brooks et al. 2010](http://genome.cshlp.org/content/early/2010/10/04/gr.108662.110)).
+```
 
 ## Table of contents
 
@@ -34,5 +41,21 @@ Along this tutorial, we will be working with a subset of a publicly available RN
 ## Software requirements
 Be aware...
 
+## Other resources
+
+### Course data
+* [Complete course data, including command outputs and R sessions](http://www.ebi.ac.uk/~mar/courses/RNAseq_all.tar.gz)
+
+### Tutorials
+* [Course materials available at the Bioconductor website](http://www.bioconductor.org/help/course-materials/)
+* [Online training resources at the EBI website](http://www.ebi.ac.uk/training/online/course-list?topic%5B%5D=13&views_exposed_form_focused_field=)
+* [R and Bioconductor tutorial by Thomas Girke](http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual)
+* And of course do not forget to check the documentation for the packages used in the practical!
+
+### Cheat sheets
+* [R reference card](http://cran.r-project.org/doc/contrib/Short-refcard.pdf)
+* [Unix comand line cheat sheet](http://sites.tufts.edu/cbi/files/2013/01/linux_cheat_sheet.pdf)
+
+
 ## Aknowledgments
-This tutorial is partially based on materials developed by Angela Gonçalves, Nicolas Delhomme, Patrick Aboyoun, Simon Anders and Martin Morgan, who we would like to thank and acknowledge.
+This tutorial has been inspired on material developed by Ângela Gonçalves, Nicolas Delhomme, Simon Anders and Martin Morgan, who I would like to thank and acknowledge. Special thanks must go to Ângela Gonçalves, with whom I started teaching, and Gabriella Rustici, for always finding a way to organise a new course.
