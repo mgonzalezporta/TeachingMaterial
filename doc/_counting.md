@@ -71,11 +71,7 @@ We have now stored our data in an object of the class *GappedAlignmentPairs*, wh
 * How can we access the information for the first reads in the pair? Try to print a vector with their start coordinates.
 * How many reads are properly paired?
 * What is the percentage of reads that map to multiple locations?
-* What information does the following command provide?
-
-  ```rconsole
-    seqlevels(aln_chr4)
-  ```
+* What information does the command `seqlevels(aln_chr4)` provide?
   *Hint:* look for the *GappedAlignmentPairs* class
 
 [Solution](../solutions/_counting_ex5.md)
@@ -108,11 +104,11 @@ annot=getBM( fields, mart=ensembl62)
 ```
 
 **Exercise:** Have a look at the newly created `annot` object. What type of object is it?
-*Hint:* use the function *class*
+*Hint:* use the function *class*.
 [Solution](../solutions/_counting_ex6.md)
 
 **Exercise:** In the next subsection we will calculate the overlap between the loaded BAM file and the annotation with the function *summarizeOverlaps* from the *GenomicRanges* package. What is the input required? Do we have all the necessary objects ready?
-*Hint:* type `?summarizeOverlaps`
+*Hint:* type `?summarizeOverlaps`.
 [Solution](../solutions/_counting_ex7.md)
 
 Before we proceed to calculate the counts, we need to store the annotation information in an object of the proper class:
