@@ -1,5 +1,4 @@
 * Try the following accessor methods:
-
 ```rconsole
 length(aln_chr4)
 head(names(aln_chr4))
@@ -16,7 +15,7 @@ table(isProperPair(aln_chr4))
 ```
 
 * What is the percentage of reads that map to multiple locations?
-```rconsole
+```R
 t=table(names(aln_chr4))
 head(t[t>1])
 length(t[t>1])/length(t)*100
