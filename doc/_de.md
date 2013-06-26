@@ -1,5 +1,5 @@
 ## Differential gene expression
-A basic task in the analysis of expression data is the detection of differentially expressed genes. The *DESeq* package provides a method to test for differential expression by using the negative binomial distribution. It expects a matrix of count values where each column corresponds to a sample and each line to a feature (e.g. a gene). Typically, a *DESeq* analysis is performed in three different steps: count normalisation, dispersion estimation and differential expression test.
+A basic task in the analysis of expression data is the detection of differentially expressed genes. The *DESeq* package provides a method to test for differential expression by using the negative binomial distribution. It expects a matrix of count values where each column corresponds to a sample and each line to a feature (e.g. a gene). Typically, a *DESeq* analysis is performed in three steps: count normalisation, dispersion estimation and differential expression test.
 
 ### Count normalisation
 Since we have already generated a matrix with the normalised counts in the previous section, we will use it directly as input for the next step.
@@ -36,7 +36,7 @@ head(de)
 The *padj* column in the table `de` contains the p-values adjusted for multiple testing with the Benjamini-Hochberg procedure (i.e. FDR). This is the information that we will use to decide whether the expression of a given gene differs significantly across conditions (e.g. we can arbitrarily decide that genes with an FDR<0.10 are differentially expressed).
 
 **Exercise:** How would you select those genes that pass a given FDR threshold (e.g. FDR<0.10)? Which are the most significant?
-[Solution](../solution/_de_ex1.md)
+[Solution](../solutions/_de_ex1.md)
 
 **Exercise:** Let us generate an MA plot to evaluate the results of the differential expression analysis. Follow this steps:
 
@@ -49,4 +49,4 @@ The *padj* column in the table `de` contains the p-values adjusted for multiple 
 * How would we highlight those genes that are differentially expressed with a different color?
   *Hint:* check the *col* argument for the *plot* function and the function *ifelse*.
 
-[Solution](../solution/_de_ex1.md)
+[Solution](../solutions/_de_ex1.md)
