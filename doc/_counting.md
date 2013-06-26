@@ -138,8 +138,10 @@ head(exon_counts_chr4, n=15)
 ```
 
 **Exercise:** So far e have obtained the number of reads overlapping each exon. How can we combine this information to obtain gene counts?
-*Hint:* use the functions *split* and *sapply*
+*Hint:* use the functions *split* and *sapply*.
 [Solution](../solutions/_counting_ex8.md)
 
 ### Alternative approaches
-In this section of the practical we have seen how to calculate the number of reads that overlap known gene models. In the two approaches evaluated here, those reads that mapped to multiple features were not considered. This is a simplification we may not want to pursue, and alternatively, there are several methods to probabilistically estimate the expression of overlapping features [Turro:2011p4448, Li:2010p4264, Trapnell:2010p3907].
+In this section of the practical we have seen how to calculate the number of reads that overlap known gene models. In the two approaches evaluated here, those reads that mapped to multiple features were not considered. This is a simplification we may not want to pursue, and alternatively, there are several methods to probabilistically estimate the expression of overlapping features (e.g. [Trapnell et al. 2010](http://www.nature.com/nbt/journal/v28/n5/abs/nbt.1621.html), [Turró et al. 2011](http://genomebiology.com/content/12/2/R13), [Li et al. 2010](http://bioinformatics.oxfordjournals.org/content/26/4/493.long)...)
+
+[Turro:2011p4448, Li:2010p4264, Trapnell:2010p3907].
