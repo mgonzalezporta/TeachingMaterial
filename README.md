@@ -37,6 +37,8 @@ RNAseq
     1. [Differential gene expression](doc/_de.md)
 
 ## Software requirements
+*Note: depending on the topics covered in the course some of these tools might not be used.*
+
 * Standalone tools:
   * [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
   * [PRINSEQ](http://prinseq.sourceforge.net/)
@@ -51,8 +53,6 @@ RNAseq
   * [biomaRt](http://www.bioconductor.org/packages/release/bioc/html/biomaRt.html)
   * [pasilla](http://www.bioconductor.org/packages/release/data/experiment/html/pasilla.html)
   * [DESeq](http://www.bioconductor.org/packages/release/bioc/html/DESeq.html)
-
-*Note: depending on the topics covered in the course some of the tools might not be used.*
 
 ## Other resources
 
