@@ -37,7 +37,22 @@ RNAseq
     1. [Differential gene expression](doc/_de.md)
 
 ## Software requirements
-Be aware...
+* Standalone tools:
+  * [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+  * [PRINSEQ](http://prinseq.sourceforge.net/)
+  * [eautils](https://code.google.com/p/ea-utils/)
+  * [samtools](http://sourceforge.net/projects/samtools/)
+  * [IGV](http://www.broadinstitute.org/software/igv/download)
+  * [htseq-count](http://www-huber.embl.de/users/anders/HTSeq/doc/count.html)
+
+* Bioconductor packages:
+  * [GenomicRanges](http://www.bioconductor.org/packages/release/bioc/html/GenomicRanges.html)
+  * [Rsamtools](http://www.bioconductor.org/packages/release/bioc/html/Rsamtools.html)
+  * [biomaRt](http://www.bioconductor.org/packages/release/bioc/html/biomaRt.html)
+  * [pasilla](http://www.bioconductor.org/packages/release/data/experiment/html/pasilla.html)
+  * [DESeq](http://www.bioconductor.org/packages/release/bioc/html/DESeq.html)
+
+*Note that depending on the topics covered in the course we might end up not using some of the above listed tools.*
 
 ## Other resources
 
