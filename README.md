@@ -52,7 +52,7 @@ RNAseq
   * [pasilla](http://www.bioconductor.org/packages/release/data/experiment/html/pasilla.html)
   * [DESeq](http://www.bioconductor.org/packages/release/bioc/html/DESeq.html)
 
-*Note: depending on the topics covered in the course we might end up not using some of the above listed tools.*
+*Note: depending on the topics covered in the course some of the tools might not be used.*
 
 ## Other resources
 
