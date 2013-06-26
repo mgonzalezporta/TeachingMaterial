@@ -1,4 +1,4 @@
-## Filtering the FASTQ files
+## Filtering FASTQ files
 After analysing the QA report, one might want to discard some of the reads based on several criteria, such as quality and nucleotide composition. We will use two different tools to perform these filtering steps: [PRINSEQ](http://prinseq.sourceforge.net/) and [fastqc-mcf](https://code.google.com/p/ea-utils/).
 
 PRINSEQ offers a wide range of options for filtering and we can learn about them in the manual:

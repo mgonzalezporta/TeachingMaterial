@@ -20,13 +20,13 @@ RNAseq
 1. **Dealing with raw data**
     1. [The FASTQ format](doc/_fastq.md)
     2. [Quality assessment (QA)](doc/_qa.md)
-    3. [Filtering the FASTQ files](doc/_filtering_fastq.md)
+    3. [Filtering FASTQ files](doc/_filtering_fastq.md)
     4. [De-multiplexing samples](doc/_demultiplexing.md)
     3. [Aligning reads to the genome](doc/_aligning.md)
 2. **Dealing with aligned data**
     1. [The SAM/BAM format](doc/_bam.md)
     1. [Visualising aligned reads](doc/_visualising.md)
-    1. [Filtering BAM files using samtools](doc/_filtering_bam.md)
+    1. [Filtering BAM files](doc/_filtering_bam.md)
     1. [Counting reads overlapping annotated genes](doc/_counting.md)
         * With htseq-count
         * With R
