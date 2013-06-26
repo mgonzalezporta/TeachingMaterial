@@ -8,7 +8,7 @@ cat barcodes.txt
 ```
 
 **Exercise:** Imagine we do not know whether the barcode was introduced in the 5' or the 3' end of the reads. How can we figure that out?
-[Solution](../solutions/_deultiplexing_ex1.md)
+[Solution](../solutions/_demultiplexing_ex1.md)
 
 In order to separate the reads in 4 different fastq files (one for each barcode/sample) we will use [fastq-multx](https://code.google.com/p/ea-utils/). We can learn more about this tool by typing its name in the terminal:
 
@@ -25,4 +25,4 @@ fastq-multx barcodes.txt barcoded.fastq -o %.barcoded.fastq
 After executing the command above you should have five new fastq files: one corresponding to each sample and one for the reads that did not match any of the barcodes.
 
 **Exercise:** Try generating a QA report for one of the samples. How does it compare to the report for the initial multiplexed fastq file? What happened to the read length?
-[Solution](../solutions/_deultiplexing_ex2.md)
+[Solution](../solutions/_demultiplexing_ex2.md)

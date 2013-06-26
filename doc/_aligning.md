@@ -1,14 +1,15 @@
 ## Aligning reads to the genome
-So far we have been working with fastq files, which contain the reads that were generated during the sequencing experiment. *A priori* we don't know from which transcripts those reads were originated, and that is precisely what will be addressed in following steps, starting with the mapping. There are essentially two ways of approaching this: one is to align the reads to a known transcriptome or genome, and the other is to assemble these reads *de novo* into a transcriptome without the need for any reference.
+So far we have been working with fastq files, which contain the reads that were generated during the sequencing experiment. *A priori* we do not know from which transcripts those reads were originated, and that is precisely what will be addressed in following steps, starting with the mapping. There are essentially two ways of approaching this: one is to align the reads to a known transcriptome or genome, and the other is to assemble these reads *de novo* into a transcriptome without the need for any reference.
 
 **Exercise:** Can you think of any advantages/disadvantages for the above mentioned approaches?
+[Solution](../solutions/_aligning_ex1.md)
 
-Here we decided to align our reads to a known reference genome. To achieve this task, you could use any aligner capable of exporting its results in the SAM/BAM format or in a format that can be easily converted to this one. In the case of RNA-seq data, we also want to be able to retain information about split reads (i.e. reads with a gap) and spliced reads (i.e. those that span multiple exons). There are many aligners available, some of them optimised for working with RNA-seq data (e.g. TopHat, GSNAP...; see [Fonseca et al. 2012]() for a review). In this practical we decided to use [TopHat](), and these are the commands we would use to map the fastq files that we have generated during the filtering step:
-
-*Note: Given that the mapping step is time consuming, we already provide an example of TopHat output in the `data/mapped` directory. The following commands are provided as a guide.*
+Here we decided to align our reads to a known reference genome. To achieve this task, you could use any aligner capable of exporting its results in the SAM/BAM format or in a format that can be easily converted to this one. In the case of RNA-seq data, we also want to be able to retain information about split reads (i.e. reads with a gap) and spliced reads (i.e. those that span multiple exons). There are many aligners available, some of them optimised for working with RNA-seq data (e.g. TopHat, GSNAP... - see [Fonseca et al. 2012](http://bioinformatics.oxfordjournals.org/content/28/24/3169) for a review). In this practical we decided to use [TopHat](http://tophat.cbcb.umd.edu/), and these are the commands we would use to map the fastq files that we have generated during the filtering step:
 
 ```bash
-# do not run
+# do not run - very time consuming
+# output already provided in the data/mapped directory
+
 cd reference
 
 # obtain the reference genome from Ensembl
@@ -26,9 +27,9 @@ tophat Drosophila_melanogaster.BDGP5.25.62.dna_rm.toplevel \
     ../data/raw/SRR031714_2_filt3.fastq
 ```
 
-The last command runs TopHat with the default options. A detailed description of those, as well as information on other commands (e.g. for single-end reads), can be found in the [manual](http://tophat.cbcb.umd.edu/manual.html) or usually just by typing the name of the tool in the console (i.e. type `tophat` on its own).
+The last command runs TopHat with the default options. A detailed description of those, as well as information on other commands (e.g. for single-end reads), can be found in the [manual](http://tophat.cbcb.umd.edu/manual.html) or just by typing the name of the tool in the console (i.e. type `tophat` on its own).
 
-Notice the `reference` directory, which contains, amongst other files, the genomic sequence for *Drosophila melanogaster* (`Drosophila_melanogaster.BDGP5.25.62.dna_rm.toplevel.fa`). We can inspect which chromosomes are present in this fasta filw with the following command:
+Notice the `reference` directory, which contains, amongst other files, the genomic sequence for *Drosophila melanogaster* (`Drosophila_melanogaster.BDGP5.25.62.dna_rm.toplevel.fa`). We can inspect which chromosomes are present in this fasta file with the following command:
 
 ```bash
 grep '^>' Drosophila_melanogaster.BDGP5.25.62.dna_rm.toplevel.fa | head
@@ -44,5 +45,6 @@ gunzip Drosophila_melanogaster.BDGP5.25.62.cdna.all.fa.gz
 ```
 
 This file has been provided on the `reference` directory. What do the "chromosome" names correspond to in this case?
+[Solution](../solutions/_aligning_ex1.md)
 
 We are now familiarised with the input required to align reads to a reference genome or transcriptome. In both cases, the output produced by the mapping tool is going to be stored in SAM/BAM format, which we will inspect in the next section.
