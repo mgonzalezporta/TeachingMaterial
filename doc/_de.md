@@ -1,6 +1,4 @@
 ## Differential gene expression
-*Note: This section is based and includes text from the [DESeq package vignette](http://www.bioconductor.org/packages/release/bioc/vignettes/DESeq/inst/doc/DESeq.pdf) to which you can refer for more details.*
-
 A basic task in the analysis of expression data is the detection of differentially expressed genes. The *DESeq* package provides a method to test for differential expression by using the negative binomial distribution. It expects a matrix of count values where each column corresponds to a sample and each line to a feature (e.g. a gene). Typically, a *DESeq* analysis is performed in three different steps: count normalisation, dispersion estimation and differential expression test.
 
 ### Count normalisation
@@ -22,7 +20,7 @@ The list returned by the *fitInfo* function contains the empirical dispersion va
 
 ```rconsole
 plot(rowMeans(counts(cds, normalized=TRUE)), fitInfo(cds)$perGeneDispEsts, log="xy")
-xg <- 10^seq(-.5, 5, length.out=300) 
+xg=10^seq(-.5, 5, length.out=300) 
 lines(xg, fitInfo(cds)$dispFun(xg), col="red")
 ```
 
@@ -38,6 +36,7 @@ head(de)
 The *padj* column in the table `de` contains the p-values adjusted for multiple testing with the Benjamini-Hochberg procedure (i.e. FDR). This is the information that we will use to decide whether the expression of a given gene differs significantly across conditions (e.g. we can arbitrarily decide that genes with an FDR<0.10 are differentially expressed).
 
 **Exercise:** How would you select those genes that pass a given FDR threshold (e.g. FDR<0.10)? Which are the most significant?
+[Solution](../solution/_de_ex1.md)
 
 **Exercise:** Let us generate an MA plot to evaluate the results of the differential expression analysis. Follow this steps:
 
@@ -45,8 +44,9 @@ The *padj* column in the table `de` contains the p-values adjusted for multiple 
 
 * Obtain the log2 fold change values from the `de` object.
 
-* Create a scatterplot with the mean in the `x` axis and the log2 fold change in the `y` axis.
+* Create a scatterplot with the mean in the *x* axis and the log2 fold change in the *y* axis.
 
 * How would we highlight those genes that are differentially expressed with a different color?
-
   *Hint:* check the *col* argument for the *plot* function and the function *ifelse*.
+
+[Solution](../solution/_de_ex1.md)

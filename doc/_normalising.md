@@ -34,7 +34,7 @@ A common way to normalise reads is to convert them to RPKMs (or FPKMs in the cas
 Such a count normalisation is suited for visualisation, but sub-optimal for further analyses. A better way of normalising the data is to use either the *edgeR* or *DESeq* packages.
 
 ### With DESeq
-RPKM normalisation is not the most adequate for certain types of downstream analysis (e.g. differential gene expression), given that it is susceptible to library composition biases. There are many other normalisation methods that should be considered with that goal in mind (see [Dillies et al. 2012](http://bib.oxfordjournals.org/content/early/2012/09/15/bib.bbs046.long)] for a comparison). In this section we are going to explore the one offered within the *DESeq* package:
+RPKM normalisation is not the most adequate for certain types of downstream analysis (e.g. differential gene expression), given that it is susceptible to library composition biases. There are many other normalisation methods that should be considered with that goal in mind (see [Dillies et al. 2012](http://bib.oxfordjournals.org/content/early/2012/09/15/bib.bbs046.long) for a comparison). In this section we are going to explore the one offered within the *DESeq* package:
 
 ```rconsole
 library(DESeq)
