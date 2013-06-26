@@ -20,6 +20,7 @@ table(isProperPair(aln_chr4))
 	t=table(names(aln_chr4))
 	head(t[t>1])
 	length(t[t>1])/length(t)*100
+	
 	# let us inspect one of the multireads
 	aln_chr4[names(aln_chr4)=="SRR031714.1029411"]
 	```
