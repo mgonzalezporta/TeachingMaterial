@@ -59,7 +59,7 @@ fastq-mcf adapters.fa SRR031714_1.fastq.gz SRR031714_2.fastq.gz \
 [Solution](../solutions/_filtering_fastq_ex5.md)
 
 **Exercise:** Something else that one might want to check is the read length. How long were our reads before we started with the filtering step? How long are they now?
-[Solution](../solutions/_filtering_fastq_ex1.md)
+[Solution](../solutions/_filtering_fastq_ex6.md)
 
 Depending on the filtering options used, we might end up with a set of reads with different lengths. *A priori*, this should not be a limitation, but we might encounter some difficulties in the downstream analyses, depending on the tools we want to use. For this reason, if we have a clear idea of what we want to do with the data, it is always a good practice to check the requirements for the tools that we are planning to use before taking any steps. If that is not the case, in order to be on the safe side, we can use filtering options that affect all reads equally, eg:
 
@@ -78,6 +78,6 @@ zcat SRR031714_1.fastq.gz | prinseq-lite \
 ```
 
 **Exercise:** Let us generate the QA reports one last time. How do they compare to the previous ones?
-[Solution](../solutions/_filtering_fastq_ex6.md)
+[Solution](../solutions/_filtering_fastq_ex7.md)
 
-**Conclusion:** There are many filtering combinations that you can apply, and the specific options will largely depend on the type of data and the posterior analyses. We recommend to check the [PRINSEQ manual](http://prinseq.sourceforge.net/manual.html) for a nice overview on the topic.
+In conclusion, there are many filtering combinations that you can apply, and the specific options will largely depend on the type of data and the posterior analyses. We recommend to check the [PRINSEQ manual](http://prinseq.sourceforge.net/manual.html) for a nice overview on the topic.
