@@ -8,7 +8,7 @@ samtools view untreated3.bam | wc -l
 * How many reads map to each chromosome?
 ```bash
 samtools view untreated3.bam | awk '{print $3}' | \
-	sort | uniq -c | sort -nr > chr.txt
+  sort | uniq -c | sort -nr > chr.txt
 less chr.txt
 ```
 
