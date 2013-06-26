@@ -2,17 +2,20 @@
 Following the read mapping step, we can proceed working with BAM files with standalone tools or load them directly in R. These two worfkflows are not exclusive and we will cover both of them for illustrative purposes.
 
 ### With htseq-count
-[htseq-count](http://www-huber.embl.de/users/anders/HTSeq/doc/count.html) is a simple but yet powerful tool to overlap a BAM file with the genome annotation and thus obtain the number of reads that overlap with our features of interest. As usual, we can obtain information on the tool by typing `htseq-count -h` and by referring to its website (see above). 
+[htseq-count](http://www-huber.embl.de/users/anders/HTSeq/doc/count.html) is a simple but yet powerful tool to overlap a BAM file with the genome annotation and thus obtain the number of reads that overlap with our features of interest. As usual, we can obtain information on the tool by typing `htseq-count -h` and by referring to its website. 
 
 **Exercise:** 0ne of the input files required by htseq-count is a GTF file. For this practical, you will find this file under the directory `reference`. Which information does it contain?
+[Solution](../solutions/_counting_ex1.md)
 
 **Exercise:** As we have already mentioned, the other required input file is a BAM file. Can you spot any specific requirement regarding this file?
 *Hint:* check the website of the tool.
+[Solution](../solutions/_counting_ex2.md)
 
 In addition to the input file requirements, special care must be taken in dealing with reads that overlap more than one feature (e.g. overlapping genes), and thus might be counted several times in different features. To deal with this, htseq-count offers three different counting modes: union, intersection-strict and intersection-nonempty.
 
 **Exercise:** What are the differences between these three counting modes?
 *Hint:* check the website of the tool.
+[Solution](../solutions/_counting_ex3.md)
 
 Now that we have a good understanding of the input files and options, we can proceed to execute htseq-count:
 
@@ -28,6 +31,7 @@ samtools view untreated3_paired.bam | htseq-count \
 ```
 
 **Exercise:** In addition to the counts that overlap known genes, the output file also contains some extra information on reads that could not be assigned to any of those; can you find it?
+[Solution](../solutions/_counting_ex4.md)
 
 ### With R
 Computing gene counts in R is very similar to what we have done so far with htseq-count. However, it requires some extra steps, since we first need to load the necessary files (i.e. BAM files and annotation).
@@ -71,6 +75,8 @@ We have now stored our data in an object of the class *GappedAlignmentPairs*, wh
     `seqlevels(aln\_chr4)`
 *Hint:* look for the *GappedAlignmentPairs* class
 
+[Solution](../solutions/_counting_ex5.md)
+
 Since we have loaded only the reads that map to chromosome 4, we can proceed to modify the `aln_chr4` object accordingly:
 ```rconsole
 seqlevels(aln_chr4)="chr4"
@@ -100,9 +106,11 @@ annot=getBM( fields, mart=ensembl62)
 
 **Exercise:** Have a look at the newly created `annot` object. What type of object is it?
 *Hint:* use the function *class*
+[Solution](../solutions/_counting_ex6.md)
 
 **Exercise:** In the next subsection we will calculate the overlap between the loaded BAM file and the annotation with the function *summarizeOverlaps* from the *GenomicRanges* package. What is the input required? Do we have all the necessary objects ready?
 *Hint:* type `?summarizeOverlaps`
+[Solution](../solutions/_counting_ex7.md)
 
 Before we proceed to calculate the counts, we need to store the annotation information in an object of the proper class:
 ```rconsole
@@ -130,8 +138,9 @@ names(exon_counts_chr4)=elementMetadata(annot_chr4)$gene
 head(exon_counts_chr4, n=15)
 ```
 
-**Exercise:** So far e have obtained the number of reads overlapping each exon. How can we combine this information to obtain gene counts?\\
+**Exercise:** So far e have obtained the number of reads overlapping each exon. How can we combine this information to obtain gene counts?
 *Hint:* use the functions *split* and *sapply*
+[Solution](../solutions/_counting_ex8.md)
 
 ### Alternative approaches
 In this section of the practical we have seen how to calculate the number of reads that overlap known gene models. In the two approaches evaluated here, those reads that mapped to multiple features were not considered. This is a simplification we may not want to pursue, and alternatively, there are several methods to probabilistically estimate the expression of overlapping features [Turro:2011p4448, Li:2010p4264, Trapnell:2010p3907].

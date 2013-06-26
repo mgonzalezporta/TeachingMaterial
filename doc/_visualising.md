@@ -6,13 +6,17 @@ Once the interface is loaded, we can proceed to load the necessary files. In our
 * the reference genome:
 
     ```
-    Genomes > Load genome from file >
-    reference/Drosophila_melanogaster.BDGP5.25.62.dna_rm.toplevel.fa
+    Genomes > Load genome from file > 
+        reference/Drosophila_melanogaster.BDGP5.25.62.dna_rm.toplevel.fa
     ```
 * the BAM file:
 
     ```
     File > Load from file > data/mapped/untreated3.bam
+
+    # IGV requires the BAM file to be indexed, which can be achieved with samtools 
+    #   (i.e. `samtools index bam_file)
+    # For this practical the index is already provided, so there is no need to run this command
     ```  
 * the annotation:
 
@@ -20,7 +24,7 @@ Once the interface is loaded, we can proceed to load the necessary files. In our
     File > Load from file > reference/Drosophila_melanogaster.BDGP5.25.62.gtf
     ```
 
-*Note: IGV requires the BAM file to be indexed, which can be achieved with samtools (i.e. `samtools index bam_file`). For this practical the index is already provided, so there is no need to run this command.*
-
 **Exercise:** Spend some time exploring the loaded BAM file and how the reads overlap with the known annotation. Can you find examples of split and spliced reads? For a subset of the reads, some nucleotides are highlighted in a different color. What do you think the explanation for this is?
 *Hint:* http://www.broadinstitute.org/igv/AlignmentData
+
+[Solution](../solutions/_visualising_ex1.md)

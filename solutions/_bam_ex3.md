@@ -1,4 +1,3 @@
-
 * How many reads map in total?
 ```bash
 samtools view untreated3.bam | wc -l
