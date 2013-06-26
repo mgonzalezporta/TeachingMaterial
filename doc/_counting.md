@@ -14,8 +14,7 @@ Following the read mapping step, we can proceed working with BAM files with stan
 In addition to the input file requirements, special care must be taken in dealing with reads that overlap more than one feature (e.g. overlapping genes), and thus might be counted several times in different features. To deal with this, htseq-count offers three different counting modes: union, intersection-strict and intersection-nonempty.
 
 **Exercise:** What are the differences between these three counting modes?
-*Hint:* http://www-huber.embl.de/users/anders/HTSeq/doc/count.html
-
+[*Hint*](http://www-huber.embl.de/users/anders/HTSeq/doc/count.html) - 
 [Solution](../solutions/_counting_ex3.md)
 
 Now that we have a good understanding of the input files and options, we can proceed to execute htseq-count:
@@ -43,7 +42,7 @@ Computing gene counts in R is very similar to what we have done so far with htse
 There are three main functions to load BAM files into R:
 
 * *scanBam*: this function is part of the *Rsamtools* package and is the low level function used by the other two. It potentially reads *all* fields (including CIGAR strings and user defined tags) of a BAM file into a list structure, but allows you to select specific fields and records to import.
-* *readAligned*: a higher-level function defined in the *ShortRead* package which imports some of the data (query names, sequences, quality, strand, reference name, position, mapping quality and flag) into an *AlignedRead* object (which an extension of a *ShortReadQ( object, and thus has the same functions). *ShortRead( was the first package developed to read in NGS data and is able to read almost sequencer every manufacturer proprietary formats (with the notable exception of ABI color-space), so you could for example also use it to read an Illumina export file produced by a GenomeAnalyzer GAIIx.
+* *readAligned*: a higher-level function defined in the *ShortRead* package which imports some of the data (query names, sequences, quality, strand, reference name, position, mapping quality and flag) into an *AlignedRead* object. *ShortRead* was the first package developed to read in NGS data and is able to read almost sequencer every manufacturer proprietary formats, so you could for example also use it to read an Illumina export file produced by a GenomeAnalyzer GAIIx.
 * *readGappedAlignments* and *readGappedAlignmentPairs*: two functions from the *GenomicRanges* package that create an object intended for operations such as searching for overlaps or coverage. Each alignment is described by its position and strand on the reference and read ids, sequences and base qualities are discarded for the sake of memory usage and speed.
 
 In this section we will import the data using the *readGappedAlignmentPairs}* function, intended for paired-end data. This will create a *GappedAlignmentPairs* object that contains only the aligned reads. In order to spead up the process of importing the data, we will use the function *ScanBamParam* to load only the reads that map to chromosome 4: 
