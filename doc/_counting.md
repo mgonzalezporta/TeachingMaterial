@@ -8,13 +8,14 @@ Following the read mapping step, we can proceed working with BAM files with stan
 [Solution](../solutions/_counting_ex1.md)
 
 **Exercise:** As we have already mentioned, the other required input file is a BAM file. Can you spot any specific requirement regarding this file?
-[*Hint*](http://www-huber.embl.de/users/anders/HTSeq/doc/count.html)
+[*Hint*](http://www-huber.embl.de/users/anders/HTSeq/doc/count.html) - 
 [Solution](../solutions/_counting_ex2.md)
 
 In addition to the input file requirements, special care must be taken in dealing with reads that overlap more than one feature (e.g. overlapping genes), and thus might be counted several times in different features. To deal with this, htseq-count offers three different counting modes: union, intersection-strict and intersection-nonempty.
 
 **Exercise:** What are the differences between these three counting modes?
-[*Hint*](http://www-huber.embl.de/users/anders/HTSeq/doc/count.html)
+*Hint:* http://www-huber.embl.de/users/anders/HTSeq/doc/count.html
+
 [Solution](../solutions/_counting_ex3.md)
 
 Now that we have a good understanding of the input files and options, we can proceed to execute htseq-count:
