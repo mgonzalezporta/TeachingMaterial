@@ -45,20 +45,20 @@ There are three main functions to load BAM files into R:
 * *readAligned*: a higher-level function defined in the *ShortRead* package which imports some of the data (query names, sequences, quality, strand, reference name, position, mapping quality and flag) into an *AlignedRead* object. *ShortRead* was the first package developed to read in NGS data and is able to read almost sequencer every manufacturer proprietary formats, so you could for example also use it to read an Illumina export file produced by a GenomeAnalyzer GAIIx.
 * *readGappedAlignments* and *readGappedAlignmentPairs*: two functions from the *GenomicRanges* package that create an object intended for operations such as searching for overlaps or coverage. Each alignment is described by its position and strand on the reference and read ids, sequences and base qualities are discarded for the sake of memory usage and speed.
 
-In this section we will import the data using the *readGappedAlignmentPairs}* function, intended for paired-end data. This will create a *GappedAlignmentPairs* object that contains only the aligned reads. In order to spead up the process of importing the data, we will use the function *ScanBamParam* to load only the reads that map to chromosome 4: 
+In this section we will import the data using the *readGappedAlignmentPairs* function, intended for paired-end data. In order to speed up the process of importing the data, we will use the function *ScanBamParam* to load only the reads that map to chromosome 4: 
 
 ```rconsole
 library(GenomicRanges)
 library(Rsamtools) 
 
 # define a filter
-which <- RangesList(IRanges(1, 1351857)) 
-names(which) <- "chr4"
+which=RangesList(IRanges(1, 1351857)) 
+names(which)="chr4"
 which
-param <- ScanBamParam(which=which)
+param=ScanBamParam(which=which)
 
 # import the data
-aln_chr4 <- readGappedAlignmentPairs("untreated3.bam", use.names=T, param=param)
+aln_chr4=readGappedAlignmentPairs("untreated3.bam", use.names=T, param=param)
 aln_chr4
 ```
 
@@ -72,8 +72,10 @@ We have now stored our data in an object of the class *GappedAlignmentPairs*, wh
 * How many reads are properly paired?
 * What is the percentage of reads that map to multiple locations?
 * What information does the following command provide?
-    `seqlevels(aln\_chr4)`
-*Hint:* look for the *GappedAlignmentPairs* class
+  ```rconsole
+    seqlevels(aln_chr4)
+  ```
+  *Hint:* look for the *GappedAlignmentPairs* class
 
 [Solution](../solutions/_counting_ex5.md)
 
