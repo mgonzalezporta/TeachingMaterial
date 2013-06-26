@@ -49,4 +49,4 @@ The *padj* column in the table `de` contains the p-values adjusted for multiple 
 * How would we highlight those genes that are differentially expressed with a different color?
   *Hint:* check the *col* argument for the *plot* function and the function *ifelse*.
 
-[Solution](../solutions/_de_ex1.md)
+[Solution](../solutions/_de_ex2.md)
