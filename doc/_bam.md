@@ -31,4 +31,5 @@ samtools view untreated3.bam | head
   *Hint:* http://picard.sourceforge.net/explain-flags.html
 * Try to print the unique CIGAR strings for the first 300 reads. What is their meaning?
   *Hint:* http://genome.sph.umich.edu/wiki/SAM
+ 
 [Solution](../solutions/_bam_ex3.md)
