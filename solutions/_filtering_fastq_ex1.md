@@ -1,0 +1,3 @@
+```bash
+prinseq-lite -h
+```
