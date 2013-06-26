@@ -18,23 +18,23 @@ RNAseq
 ## Table of contents
 
 1. **Dealing with raw data**
-    1. [The FASTQ format](doc/_fastq.md)
-    2. [Quality assessment (QA)](doc/_qa.md)
-    3. [Filtering FASTQ files](doc/_filtering_fastq.md)
-    4. [De-multiplexing samples](doc/_demultiplexing.md)
-    3. [Aligning reads to the genome](doc/_aligning.md)
+    1. [The FASTQ format](doc/11.fastq.md)
+    2. [Quality assessment (QA)](doc/12.qa.md)
+    3. [Filtering FASTQ files](doc/13.filtering_fastq.md)
+    4. [De-multiplexing samples](doc/14.demultiplexing.md)
+    3. [Aligning reads to the genome](doc/15.aligning.md)
 2. **Dealing with aligned data**
-    1. [The SAM/BAM format](doc/_bam.md)
-    1. [Visualising aligned reads](doc/_visualising.md)
-    1. [Filtering BAM files](doc/_filtering_bam.md)
-    1. [Counting reads overlapping annotated genes](doc/_counting.md)
+    1. [The SAM/BAM format](doc/21.bam.md)
+    1. [Visualising aligned reads](doc/22.visualising.md)
+    1. [Filtering BAM files](doc/23.filtering_bam.md)
+    1. [Counting reads overlapping annotated genes](doc/24.counting.md)
         * With htseq-count
         * With R
         * Alternative approaches
-    1. [Normalising counts](doc/_normalising.md)
+    1. [Normalising counts](doc/25.normalising.md)
         * With RPKMs
         * With DESeq
-    1. [Differential gene expression](doc/_de.md)
+    1. [Differential gene expression](doc/26.de.md)
 
 ## Software requirements
 *Note: depending on the topics covered in the course some of these tools might not be used.*
