@@ -12,9 +12,7 @@ zcat SRR031714_2.fastq.gz | head
 ```
 
 **Exercise:** How many lines are used to represent a read in the fastq file? Which information do they contain?
-
 [Solution](../solutions/_fastq_ex2.md)
 
 **Exercise:** How many reads are there in each file? Do both files contain the same number of reads? Is that what we would expect?
-
 [Solution](../solutions/_fastq_ex3.md)
