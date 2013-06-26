@@ -7,7 +7,7 @@ The tools and R packages that we will be using during the practical are listed b
 
 ```
 RNAseq
-|-- reference               # reference info (e.g genome sequence and annotation)
+|-- reference               # reference info (e.g. genome sequence and annotation)
 `-- data
     |-- raw                 # raw data: fastq files
     |-- mapped              # mapped data: BAM files

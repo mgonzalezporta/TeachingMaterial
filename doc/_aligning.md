@@ -45,6 +45,6 @@ gunzip Drosophila_melanogaster.BDGP5.25.62.cdna.all.fa.gz
 ```
 
 This file has been provided on the `reference` directory. What do the "chromosome" names correspond to in this case?
-[Solution](../solutions/_aligning_ex1.md)
+[Solution](../solutions/_aligning_ex2.md)
 
 We are now familiarised with the input required to align reads to a reference genome or transcriptome. In both cases, the output produced by the mapping tool is going to be stored in SAM/BAM format, which we will inspect in the next section.
