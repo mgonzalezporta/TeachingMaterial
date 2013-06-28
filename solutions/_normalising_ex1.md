@@ -4,7 +4,7 @@ exon_lengths=width(annot)
 names(exon_lengths)=elementMetadata(annot)$gene
 head(exon_lengths)
 
-# calculate gene lengts 
+# calculate gene lengths 
 exon_lengths_by_gene=split( exon_lengths, names(exon_lengths) )
 head(exon_lengths_by_gene, n=1)
 gene_lengths=sapply( exon_lengths_by_gene, sum ) 
