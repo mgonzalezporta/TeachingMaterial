@@ -1,13 +1,6 @@
 In a typical differential expression analysis, the majority of the genes are assumed to be non-differentially expressed. For this reason, it is useful to examine boxplots of counts across samples in each dataset, both before and after normalization. An effective normalization should result in a stabilization of read count distributions across replicates.
 
 ```rconsole
-# check this!!
-# remember that we were working with a subset of the annotation
-rpkm_chr4=rpkm
-raw_counts_chr4=counts[row.names(counts) %in% row.names(rpkm_chr4),]
-norm_counts_chr4=norm_counts[row.names(norm_counts) %in% row.names(rpkm_chr4),]
-
-
 # create a list to simplify the plotting step
 l=list(
         split(counts, colnames(counts)),
