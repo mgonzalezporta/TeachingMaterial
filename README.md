@@ -29,14 +29,17 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unpor
     1. [The SAM/BAM format](doc/21.bam.md)
     1. [Visualising aligned reads](doc/22.visualising.md)
     1. [Filtering BAM files](doc/23.filtering_bam.md)
-    1. [Counting reads overlapping annotated genes](doc/24.counting.md)
-        * With htseq-count
-        * With R
-        * Alternative approaches
-    1. [Normalising counts](doc/25.normalising.md)
-        * With RPKMs
-        * With DESeq
-    1. [Differential gene expression](doc/26.de.md)
+    2. Gene-centric analyses:
+        1. [Counting reads overlapping annotated genes](doc/24.counting.md)
+            * With htseq-count
+            * With R
+            * Alternative approaches
+        1. [Normalising counts](doc/25.normalising.md)
+            * With RPKMs
+            * With DESeq
+        1. [Differential gene expression](doc/26.de.md)
+    2. Exon-centric analyses:
+        1. [Differential exon usage](doc/27.deu.md)
 
 ## Software requirements
 *Note: depending on the topics covered in the course some of these tools might not be used.*
