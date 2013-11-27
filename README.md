@@ -40,7 +40,8 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unpor
         1. [Differential gene expression](doc/26.de.md)
     2. Exon-centric analyses:
         1. [Differential exon usage](doc/27.deu.md)
-    2. [Identification, annotation and visualisation of splicing switch events](doc/28.se.md)
+    2. Transcript-centric analyses:
+        1. [Identification, annotation and visualisation of splicing switch events](doc/28.se.md)
 
 ## Software requirements
 *Note: depending on the topics covered in the course some of these tools might not be used.*
