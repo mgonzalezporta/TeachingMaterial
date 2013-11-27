@@ -1,0 +1,2 @@
+Similarly to Phred scores, mapping qualities reflect the probability of a wrong alignment. However, despite of the fact that they contain the same information, its range can vary depending on the mapping tool used.
+In this example, and considering that we have mapped the reads using TopHat, DEXSeq would only consider those reads that map uniquely (i.e. mapping quality = 255; see [previous exercise](https://github.com/mgonzalezporta/TeachingMaterial/blob/master/solutions/_bam_ex3.md)).
