@@ -36,7 +36,7 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unpor
             * Alternative approaches
         1. [Normalising counts](doc/25.normalising.md)
             * With RPKMs
-            * With DESeq
+            * With DESeq2
         1. [Differential gene expression](doc/26.de.md)
     2. Exon-centric analyses:
         1. [Differential exon usage](doc/27.deu.md)
