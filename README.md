@@ -79,4 +79,4 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unpor
 
 
 ## Aknowledgments
-This tutorial has been inspired on material developed by Ângela Gonçalves, Nicolas Delhomme, Simon Anders and Martin Morgan, who I would like to thank and acknowledge. Special thanks must go to Ângela Gonçalves, with whom I started teaching, and Gabriella Rustici, for always finding a way to organise a new course.
+This tutorial has been inspired on material developed by Ângela Gonçalves, Nicolas Delhomme, Simon Anders and Martin Morgan, who I would like to thank and acknowledge. Special thanks must go to Ângela Gonçalves and Mitra Barzine, with whom I have been teaching, and to Gabriella Rustici, for always finding a way to organise a new course.
