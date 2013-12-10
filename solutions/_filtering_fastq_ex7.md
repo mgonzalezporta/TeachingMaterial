@@ -1,1 +1,1 @@
-## Open answer
+Open answer
