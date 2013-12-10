@@ -24,7 +24,7 @@ samtools view untreated3.bam | awk '{print $5}' | sort | uniq -c | sort -nr
   
 * How many different alignment flags can you find in the BAM file?
 ```bash
-samtools view tophat_out/accepted_hits.bam | awk '{print $2}' | sort | uniq -c | sort -nr
+samtools view untreated3.bam | awk '{print $2}' | sort | uniq -c | sort -nr
 ```
 
 * Try to print the unique CIGAR strings for the first 300 reads. What is their meaning?
