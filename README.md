@@ -3,7 +3,7 @@ This tutorial will illustrate how to use standalone tools, together with R and B
 
 We will be working with a subset of a publicly available dataset from *Drosophila melanogaster*, which is available both in the Short Read archive ([SRP001537](http://www.ebi.ac.uk/ena/data/view/SRP001537) - raw data) and in Bioconductor ([pasilla package](http://www.bioconductor.org/packages/release/data/experiment/html/pasilla.html) - processed data). For more information about this dataset please refer to the original publication ([Brooks et al. 2010](http://genome.cshlp.org/content/early/2010/10/04/gr.108662.110)).
 
-The tools and R packages that we will be using during the practical are listed below (see [Software requirements](https://github.com/mgonzalezporta/TeachingMaterial#software-requirements)) and the necessary data files can be found [here](http://www.ebi.ac.uk/~mar/courses/RNAseq.tar.gz). After dowloading and uncompressing the `tar.gz` file, you should have the following directory structure in your computer:
+The tools and R packages that we will be using during the practical are listed below (see [Software requirements](https://github.com/mgonzalezporta/TeachingMaterial#software-requirements)) and the necessary data files can be found [here](http://www.ebi.ac.uk/~mar/courses/RNAseq_all.tar.gz). After dowloading and uncompressing the `tar.gz` file, you should have the following directory structure in your computer:
 
 ```
 RNAseq
