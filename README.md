@@ -3,7 +3,7 @@ This tutorial will illustrate how to use standalone tools, together with R and B
 
 We will be working with a subset of a publicly available dataset from *Drosophila melanogaster*, which is available both in the Short Read archive ([SRP001537](http://www.ebi.ac.uk/ena/data/view/SRP001537) - raw data) and in Bioconductor ([pasilla package](http://www.bioconductor.org/packages/release/data/experiment/html/pasilla.html) - processed data). For more information about this dataset please refer to the original publication ([Brooks et al. 2010](http://genome.cshlp.org/content/early/2010/10/04/gr.108662.110)).
 
-The tools and R packages that we will be using during the practical are listed below (see [Software requirements](https://github.com/mgonzalezporta/TeachingMaterial#software-requirements)) and the necessary data files can be found [here](http://www.ebi.ac.uk/~mar/courses/RNAseq.tar.gz). After dowloading and uncompressing the `tar.gz` file, you should have the following directory structure in your computer:
+The tools and R packages that we will be using during the practical are listed below (see [Software requirements](https://github.com/mgonzalezporta/TeachingMaterial#software-requirements)) and the necessary data files can be found [here](http://www.ebi.ac.uk/~mar/courses/RNAseq_all.tar.gz). After dowloading and uncompressing the `tar.gz` file, you should have the following directory structure in your computer:
 
 ```
 RNAseq
@@ -29,14 +29,19 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unpor
     1. [The SAM/BAM format](doc/21.bam.md)
     1. [Visualising aligned reads](doc/22.visualising.md)
     1. [Filtering BAM files](doc/23.filtering_bam.md)
-    1. [Counting reads overlapping annotated genes](doc/24.counting.md)
-        * With htseq-count
-        * With R
-        * Alternative approaches
-    1. [Normalising counts](doc/25.normalising.md)
-        * With RPKMs
-        * With DESeq
-    1. [Differential gene expression](doc/26.de.md)
+    2. Gene-centric analyses:
+        1. [Counting reads overlapping annotated genes](doc/24.counting.md)
+            * With htseq-count
+            * With R
+            * Alternative approaches
+        1. [Normalising counts](doc/25.normalising.md)
+            * With RPKMs
+            * With DESeq2
+        1. [Differential gene expression](doc/26.de.md)
+    2. Exon-centric analyses:
+        1. [Differential exon usage](doc/27.deu.md)
+    2. Transcript-centric analyses:
+        1. [Identification, annotation and visualisation of splicing switch events](doc/28.se.md)
 
 ## Software requirements
 *Note: depending on the topics covered in the course some of these tools might not be used.*
@@ -54,7 +59,8 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unpor
   * [Rsamtools](http://www.bioconductor.org/packages/release/bioc/html/Rsamtools.html)
   * [biomaRt](http://www.bioconductor.org/packages/release/bioc/html/biomaRt.html)
   * [pasilla](http://www.bioconductor.org/packages/release/data/experiment/html/pasilla.html)
-  * [DESeq](http://www.bioconductor.org/packages/release/bioc/html/DESeq.html)
+  * [DESeq2](http://www.bioconductor.org/packages/2.13/bioc/html/DESeq2.html)
+  * [DEXSeq](http://www.bioconductor.org/packages/2.13/bioc/html/DEXSeq.html)
 
 ## Other resources
 
@@ -73,4 +79,4 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unpor
 
 
 ## Aknowledgments
-This tutorial has been inspired on material developed by Ângela Gonçalves, Nicolas Delhomme, Simon Anders and Martin Morgan, who I would like to thank and acknowledge. Special thanks must go to Ângela Gonçalves, with whom I started teaching, and Gabriella Rustici, for always finding a way to organise a new course.
+This tutorial has been inspired on material developed by Ângela Gonçalves, Nicolas Delhomme, Simon Anders and Martin Morgan, who I would like to thank and acknowledge. Special thanks must go to Ângela Gonçalves and Mitra Barzine, with whom I have been teaching, and to Gabriella Rustici, for always finding a way to organise a new course.
