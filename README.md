@@ -61,6 +61,7 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unpor
   * [biomaRt](http://www.bioconductor.org/packages/release/bioc/html/biomaRt.html)
   * [pasilla](http://www.bioconductor.org/packages/release/data/experiment/html/pasilla.html)
   * [DESeq2](http://www.bioconductor.org/packages/2.13/bioc/html/DESeq2.html)
+  * [DESeq](http://www.bioconductor.org/packages/2.13/bioc/html/DESeq.html)
   * [DEXSeq](http://www.bioconductor.org/packages/2.13/bioc/html/DEXSeq.html)
 
 ## Other resources
