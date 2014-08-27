@@ -4,7 +4,7 @@ We can also execute the following command if we want to automate the process:
 
 ```bash
 grep '^@SRR' SRR031714_1_filt1.fastq | wc -l
-    # find the lines starting with "@" and count how many there are
+    # find the lines starting with "@SRR" and count how many there are
     # 5,150,415
 ```
 
