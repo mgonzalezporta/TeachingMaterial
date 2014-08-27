@@ -78,6 +78,8 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unpor
 * [R reference card](http://cran.r-project.org/doc/contrib/Short-refcard.pdf)
 * [Unix comand line cheat sheet](http://sites.tufts.edu/cbi/files/2013/01/linux_cheat_sheet.pdf)
 
+### More on RNA-seq
+* [Introduction to my thesis](pdf/my_thesis.rna-seq.pdf)
 
 ## Aknowledgments
 This tutorial has been inspired on material developed by Ângela Gonçalves, Nicolas Delhomme, Simon Anders and Martin Morgan, who I would like to thank and acknowledge. Special thanks must go to Ângela Gonçalves and Mitra Barzine, with whom I have been teaching, and to Gabriella Rustici, for always finding a way to organise a new course.
