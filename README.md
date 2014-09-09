@@ -68,18 +68,19 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unpor
 ### Course data
 * [Complete course data, including command outputs and R sessions](http://www.ebi.ac.uk/~mar/courses/RNAseq_all.tar.gz)
 
-### Tutorials
-* [Course materials available at the Bioconductor website](http://www.bioconductor.org/help/course-materials/)
-* [Online training resources at the EBI website](http://www.ebi.ac.uk/training/online/course-list?topic%5B%5D=13&views_exposed_form_focused_field=)
+### Getting started in R and UNIX
+* [R reference card](http://cran.r-project.org/doc/contrib/Short-refcard.pdf)
+* [Unix comand line cheat sheet](http://sites.tufts.edu/cbi/files/2013/01/linux_cheat_sheet.pdf)
 * [R and Bioconductor tutorial by Thomas Girke](http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual)
 * Do not forget to check the documentation for the packages used in the practical!
 
-### Cheat sheets
-* [R reference card](http://cran.r-project.org/doc/contrib/Short-refcard.pdf)
-* [Unix comand line cheat sheet](http://sites.tufts.edu/cbi/files/2013/01/linux_cheat_sheet.pdf)
-
-### More on RNA-seq
+### More on RNA-seq and NGS
 * [Introduction to my thesis](pdf/my_thesis.rna-seq.pdf)
+* [Online training resources at the EBI website](http://www.ebi.ac.uk/training/online/course-list?topic%5B%5D=13&views_exposed_form_focused_field=)
+* [Bioinformatic methods I - Coursera](https://www.coursera.org/course/bioinfomethods1)
+* [Bioinformatic methods II - Coursera](https://www.coursera.org/course/bioinfomethods2)
+* [Data analysis for genomics](https://www.edx.org/course/harvardx/harvardx-ph525x-data-analysis-genomics-1401#.VA7RPWRdVA9)
+* [Courses from the Bioconductor website](http://www.bioconductor.org/help/course-materials/)
 
 ## Aknowledgments
 This tutorial has been inspired on material developed by Ângela Gonçalves, Nicolas Delhomme, Simon Anders and Martin Morgan, who I would like to thank and acknowledge. Special thanks must go to Ângela Gonçalves and Mitra Barzine, with whom I have been teaching, and to Gabriella Rustici, for always finding a way to organise a new course.
